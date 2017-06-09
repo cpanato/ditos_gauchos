@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ditos-gauchescos-app
+  labels:
+    app: ditos-gauchescos
+    tier: app
+  namespace: default
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: ditos-gauchescos-app
+      labels:
+        app: ditos-gauchescos
+        tier: app
+    spec:
+      containers:
+      - name: ditos-gauchescos
+        image: "ctadeu/ditos:1.2"
+        ports:
+        - containerPort: 8080
+
